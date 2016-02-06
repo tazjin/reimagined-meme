@@ -1,5 +1,6 @@
-{-# LANGUAGE DataKinds     #-}
-{-# LANGUAGE TypeOperators #-}
+{-# LANGUAGE DataKinds         #-}
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE TypeOperators     #-}
 
 module Main where
 
@@ -12,7 +13,7 @@ import           Servant.Server
 type Echo = Get '[PlainText] Text
 
 handler :: Server Echo
-handler = return empty
+handler = return "ok"
 
 main :: IO ()
 main = run 8080 $ serve (Proxy :: Proxy Echo) handler
